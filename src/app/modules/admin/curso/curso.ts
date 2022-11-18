@@ -1,10 +1,10 @@
-export interface Curso {
+export class Curso{
+    public id?: string;
+    public title?: string;
+    public description?: string;
+    public category?: string;
+    public duration?: number;
+    public updatedAt?: string;
 
-    id?: string;
-    title?: string;
-    slug?: string;
-    description?: string;
-    category?: string;
-    duration?: number;
-    updatedAt?: string;
+
 }

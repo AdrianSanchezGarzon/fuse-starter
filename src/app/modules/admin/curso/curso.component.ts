@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {Component, OnInit, ViewEncapsulation, NgModule} from '@angular/core';
 import {CursoService} from "./curso.service";
 import {Curso} from "./curso";
 import {FuseConfirmationModule, FuseConfirmationService} from '@fuse/services/confirmation';
@@ -7,11 +7,14 @@ import {FuseConfirmationModule, FuseConfirmationService} from '@fuse/services/co
 @Component({
     selector     : 'curso',
     templateUrl  : './curso.component.html',
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    styleUrls: ['./curso.component.css']
 })
 export class CursoComponent implements OnInit
 {
     public cursos: Array<Curso>[];
+    public mostrar:boolean=false;
+    public alumnos:Array<string> = ["sergio","pablo","juan","pedro","Alejandro"];
 
     /**
      * Constructor
@@ -31,5 +34,11 @@ export class CursoComponent implements OnInit
             }
         });
         this._cursoService.getCursos().subscribe(data=>this.cursos=data);
+    }
+
+    cambiarbool(estado:boolean) : void{
+        if (this.mostrar==false)
+            this.mostrar = estado;
+        else this.mostrar = false;
     }
 }

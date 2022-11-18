@@ -1,24 +1,46 @@
-<table>
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Title</th>
-            <th>Slug</th>
-            <th>Description</th>
-            <th>Category</th>
-            <th>Duration</th>
-            <th>UpdateAt</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let curso of cursos">
-            <td>{{curso.id}}</td>
-            <td>{{curso.title}}</td>
-            <td>{{curso.slug}}</td>
-            <td>{{curso.description}}</td>
-            <td>{{curso.category}}</td>
-            <td>{{curso.duration}}</td>
-            <td>{{curso.updatedAt}}</td>
-        </tr>
-    </tbody>
-</table>
+ <ul type="listados-curso">
+        <li class="titulos-lista-curso" *ngFor="let curso of cursos">
+            ID:
+            <ul>
+                <li class="lista-curso">{{curso.id}}</li>
+            </ul>
+<!--        </li>
+        <li *ngFor="let curso of cursos">-->
+            Titulo:
+            <ul>
+                <li class="lista-curso">{{curso.title}}</li>
+            </ul>
+<!--        </li>
+        <li *ngFor="let curso of cursos">-->
+            Descripcion:
+            <ul>
+                <li class="lista-curso">{{curso.description}}</li>
+            </ul>
+<!--        </li>
+        <li *ngFor="let curso of cursos">-->
+            Categoria:
+            <ul>
+                <li class="lista-curso">{{curso.category}}</li>
+            </ul>
+<!--        </li>
+        <li *ngFor="let curso of cursos">-->
+            Duracion:
+            <ul>
+                <li class="lista-curso">{{curso.duration}}</li>
+            </ul>
+<!--        </li>
+        <li *ngFor="let curso of cursos">-->
+            Actualizado:
+            <ul>
+                <li class="lista-curso">{{curso.updatedAt}}</li>
+            </ul>
+            <ul>
+                <li class="titulos-lista-curso" *ngFor="let curso of cursos">
+                    <div class="example-button-row"><button mat-raised-button color="warn"(click)="this.cambiarbool(true)">Alumnos:</button></div>
+                    <div *ngIf="mostrar==true"><ul>
+                        <li class="lista-curso">{{alumnos}}</li>
+                    </ul></div>
+                </li>
+            </ul>
+        </li>
+    </ul>
